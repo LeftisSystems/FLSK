@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Termar</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+            crossorigin="anonymous" />
+        <!--icon-->
+        <link rel="icon" href="assets/img/icon.png" type="image/x-icon">
+        <!-- sweetalert -->
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <style>
+        #map {
+            height: 400px;
+            width: 60%;
+            box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);
+        }
+    </style>
+        <link rel="stylesheet" href="assets/css/main.css">
+        <script>
+        document.querySelectorAll('nav a').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        const targetId = this.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+
+        window.scrollTo({
+            top: targetElement.offsetTop - 50, // Offset para el encabezado
+            behavior: 'smooth'
+        });
+    });
+});
+
+    </script>
+    </head>
+    <body>
+
+        <div class="content">
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#"><img
+                            src="assets/img/termarmain.svg" class="logo" alt></a>
+                    <button
+                        class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarNav"
+                        aria-controls="navbarNav"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end"
+                        id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page"
+                                    href="#">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link"
+                                    href="#products">Products</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link"
+                                    href="#location">Locations</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <div class="container mt-5 mb-4 ">
+                    <div class="row align-items-center">
+                        <div class="col-md-6">
+                            <h1>Termar</h1>
+                            <p>
+
+                                We offer a
+                                wide selection to meet your hot or cold beverage
+                                needs anytime, anywhere.
+                            </p>
+                            <a href="https://wa.me/6221386121"
+                                class="btn btn-contact">Contact us</a>
+                        </div>
+                        <div class="col-md-6 d-flex justify-content-center">
+                            <img id="logoM" src="assets/img/termarmain.svg"
+                                class="img-fluid"
+                                alt>
+                        </div>
+                    </div>
+
+                </div>
+                <div id="products">
+                    <div
+                        class="d-flex flex-column text-center mt-5 justify-content-center">
+                        <h1>Featured Products</h1>
+                        <p></p>
+                    </div>
+                    <div class="container mt-5">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <img id="img-y20"
+                                        src="assets/img/20oz/rojo.jpg"
+                                        class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title
+                                ">YETI 20oz</h5>
+                                        <p class="card-text"></p>
+                                        <!-- <a href="#" class="btn btn-primary">View Product</a> -->
+                                        <div class="colors">
+                                            <p>Color</p>
+                                            <div class="colors-dis">
+                                                <span class="red activeSpan"
+                                                    onclick='changeImg("assets/img/20oz/rojo.jpg","img-y20")'></span>
+                                                <span class="green"
+                                                    onclick='changeImg("assets/img/20oz/verdemilitar.webp","img-y20")'></span>
+                                                <span class="bluef"
+                                                    onclick='changeImg("assets/img/20oz/azulFeo.jpg","img-y20")'></span>
+                                                <span class="rose"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <img src="assets/img/36oz/azul.jpg"
+                                        id="img-y36"
+                                        class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title
+                                ">YETI 36oz</h5>
+                                        <p class="card-text"></p>
+                                        <div class="colors">
+                                            <p>Color</p>
+                                            <div class="colors-dis">
+
+                                                <span class="white "
+                                                    onclick='changeImg("assets/img/36oz/blanco.jpg","img-y36")'></span>
+                                                <span class="blue activeSpan"
+                                                    onclick='changeImg("assets/img/36oz/azul.jpg","img-y36")'></span>
+                                                <span class="rose"></span>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <img src="assets/img/24oz/blanco.jpg"
+                                        id="img-y24"
+                                        class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title
+                                ">YETI 24oz</h5>
+                                        <p class="card-text"></p>
+                                        <div class="colors">
+                                            <p>Color</p>
+                                            <div class="colors-dis">
+                                                <span class="white"
+                                                    onclick='changeImg("assets/img/24oz/blanco.jpg","img-y24")'></span>
+
+                                                <span class="green"
+                                                    onclick='changeImg("assets/img/24oz/verdeMilitar.jpg","img-y24")'></span>
+                                                <span class="rose"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-4">
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <img src="assets/img/30oz/negro.jpg"
+                                        id="img-y30"
+                                        class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title
+                                ">YETI 30oz</h5>
+                                        <p class="card-text"></p>
+                                        <div class="colors">
+                                            <p>Color</p>
+                                            <div class="colors-dis">
+                                                <span class="red"
+                                                    onclick='changeImg("assets/img/30oz/rojo.jpg","img-y30")'></span>
+                                                <span class="black activeSpan"
+                                                    onclick='changeImg("assets/img/30oz/negro.jpg","img-y30")'></span>
+                                                <span class="gray"
+                                                    onclick='changeImg("assets/img/30oz/gris.jpg","img-y30")'></span>
+                                                <span class="bluef"
+                                                    onclick='changeImg("assets/img/30oz/azulFeo.jpg","img-y30")'></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <img src="assets/img/18oz/rojo.jpg"
+                                        id="img-y18"
+                                        class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title
+                                ">YETI 18oz</h5>
+                                        <p class="card-text"></p>
+                                        <div class="colors">
+                                            <p>Color</p>
+                                            <div class="colors-dis">
+                                                <span class="white"
+                                                    onclick='changeImg("assets/img/18oz/blanco.jpg","img-y18")'></span>
+                                                <span
+                                                    class="red activeSpan"
+                                                    onclick='changeImg("assets/img/18oz/rojo.jpg","img-y18")'></span>
+                                                <span class="black"
+                                                    onclick='changeImg("assets/img/18oz/negro.jpg","img-y18")'></span>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <img src="assets/img/stanley20oz/negro.webp"
+                                        id="stanley20oz"
+                                        class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title
+                                ">Stanley 20oz</h5>
+                                        <p class="card-text"></p>
+                                        <div class="colors">
+                                            <p>Color</p>
+                                            <div class="colors-dis">
+                                                <span class="white"
+                                                    onclick='changeImg("assets/img/stanley20oz/blanco.webp","stanley20oz")'></span>
+                                                <span
+                                                    class="purple activeSpan"
+                                                    onclick='changeImg("assets/img/stanley20oz/morado.webp","stanley20oz")'></span>
+                                                <span class="black"
+                                                    onclick='changeImg("assets/img/stanley20oz/negro.webp","stanley20oz")'></span>
+                                                <span class="rose"
+                                                    onclick='changeImg("assets/img/stanley20oz/rosa.webp","stanley20oz")'></span>
+                                                <span class="green"
+                                                    onclick='changeImg("assets/img/stanley20oz/verde.webp","stanley20oz")'></span>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div id="location">
+                    <div
+                        class="d-flex flex-column text-center mt-5 justify-content-center">
+                        <h1>Our Locations</h1>
+                        <p>Check out our top-selling products. The perfect blend
+                            of form and function.</p>
+
+                    </div>
+                    <div class="d-flex justify-content-center wrapper-map">
+                        <div id="map"></div>
+                    </div>
+                    <script>
+                        // Función de inicialización del mapa
+                        function initMap() {
+                            // Coordenadas del centro del mapa
+                            var centroMapa = { lat: 27.936130, lng: -110.933988 };
+                
+                            // Crear un nuevo mapa en el elemento con id="map"
+                            var mapa = new google.maps.Map(document.getElementById('map'), {
+                                zoom: 12, // Nivel de zoom
+                                center: centroMapa // Centro del mapa
+                            });
+                
+                            // Marcador en la posición del centro del mapa
+                            var marcador = new google.maps.Marker({
+                                position: centroMapa,
+                                map: mapa
+                            });
+                            //zoom
+                            mapa.setZoom(15);
+                        
+                        }
+                    </script>
+                    <!-- Incluir la API de Google Maps -->
+                    <script
+                        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDNESuwm02SRod1FSahttV5aw4gWl5lcYc&callback=initMap"
+                        async defer>
+                    </script>
+                </div>
+                <footer class="footer mt-5">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <h3>Temar</h3>
+                                <p>
+
+                                    We offer a wide selection to
+                                    meet your hot or cold beverage needs
+                                    anytime, anywhere.
+
+                                </p>
+                            </div>
+                            <div class="col-md-4">
+                                <h3></h3>
+                                <ul>
+                                    <li><a href="#">Home</a></li>
+                                    <li><a href="#">Products</a></li>
+                                    <li><a href="#">Locations</a></li>
+                                    <li><a href="#">Contact</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-md-4">
+                                <h3>Contact</h3>
+                                <p></p>
+                                <p>Guaymas, Son. 85456</p>
+                                <div class="social">
+                                    <a href="#"><img
+                                            src="assets/img/facebook.png"
+                                            alt></a>
+                                    <a href="#"><img
+                                            src="assets/img/instagram.png"
+                                            alt></a>
+                                    <a href="#"><img
+                                            src="assets/img/twitter.png"
+                                            alt></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+
+            <script
+                src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+                crossorigin="anonymous"></script>
+            <script
+                src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+            <script>
+                $(document).ready(function(){
+                    $(".colors-dis span").click(function(){
+                        $(".colors-dis span").removeClass("activeSpan")
+                        $(this).addClass("activeSpan")
+                        var color = $(this).attr("class")
+                        if(color == "red"){
+                            $("#img-y20").attr("src", "assets/img/20oz/rojo.jpg")
+                        }
+                        if(color == "green"){
+                            $("#img-y20").attr("src", "assets/img/20oz/verdemilitar.jpg")
+                            console.log("green")
+                        }
+                    });
+                  
+                })
+            </script>
+            <script>
+                $(document).ready(function(){
+                    $(window).width(function(){
+                        if($(window).width() < 768){
+                            $("#logoM").addClass("invisible")
+                        }
+                    })
+                })
+            </script>
+            <script>
+                function changeImg(img,id){
+                    $("#"+id).attr("src", img)
+                }
+            </script>
+        </div>
+    </body>
+</html>
