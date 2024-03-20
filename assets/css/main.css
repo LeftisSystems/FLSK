@@ -81,6 +81,9 @@ body{
     margin: 0.1rem;
     cursor: pointer;
 }
+.title-flsk{
+    letter-spacing: 10px;
+}
 .red{
 background-color: red;
 }
