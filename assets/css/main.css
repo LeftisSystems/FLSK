@@ -28,6 +28,10 @@ body{
     display: block;
     margin: 0 auto;
 }
+.color-title{
+    color: #052659;
+}
+
 .navbar{
     background-color: #EDF6F9;
 }
